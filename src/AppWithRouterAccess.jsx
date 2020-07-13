@@ -17,14 +17,14 @@ export default withRouter(class AppWithRouterAccess extends Component {
 
   render() {
     return (
-      <Security issuer='https://dev-273472.oktapreview.com/oauth2/ausqxr6vbsMh6tmN30h7'
+      <Security issuer='https://stage.login.bandwidth.com/oauth2/ausqxr6vbsMh6tmN30h7'
                 clientId='0oarxepkkbAGuZysv0h7'
                 redirectUri={window.location.origin + '/okta/callback'}
                 onAuthRequired={this.onAuthRequired}
                 pkce={true} >
         <Route path='/' exact={true} component={Home} />
         <SecureRoute path='/protected' component={Protected} />
-        <Route path='/login' render={() => <Login issuer='https://dev-273472.oktapreview.com/oauth2/ausqxr6vbsMh6tmN30h7' />} />
+        <Route path='/login' render={() => <Login issuer='https://stage.login.bandwidth.com/oauth2/ausqxr6vbsMh6tmN30h7' />} />
         <Route path='/okta/callback' component={LoginCallback} />
       </Security>
     );
